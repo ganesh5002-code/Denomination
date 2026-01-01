@@ -4,7 +4,7 @@ from PIL import Image, ImageTk
 
 window = Tk()
 window.title("Denomination calculator")
-window.configure(bg= "Light Green")
+window.configure(bg= "light green")
 window.geometry('600x600')
 
 uploaded_image = Image.open("download (2).jpg")
@@ -27,7 +27,7 @@ button.place(x= 200, y= 500, anchor= CENTER)
 def topwin():
     top = Toplevel()
     top.title("Notes")
-    top.configure('light blue')
+    top.configure(bg='light blue')
     top.geometry('400x400+50+50')
     
     label = Label(top, text= "Enter amount")
@@ -40,6 +40,19 @@ def topwin():
     Entry1= Entry(top)
     Entry2= Entry(top)
     Entry3= Entry(top)
+
+    label.grid(column= 1, row= 1)
+    entry.grid(column= 3, row= 1)
+
+    label1.grid(row= 2, column= 1)
+    Entry1.grid(row= 2, column= 3)
+
+    label2.grid(row= 3, column= 1)
+    Entry2.grid(row= 3, column= 3)
+
+    label3.grid(row= 4, column= 1)
+    Entry3.grid(row= 4, column= 3)
+
 
     def calculate():
         try:
@@ -65,7 +78,9 @@ def topwin():
           
 
     button = Button(top, text= "Calculate", command= calculate)
-    top.mainloop()
+    button.grid(row= 5, column= 2)
+    
+   
 
 window.mainloop()
 
